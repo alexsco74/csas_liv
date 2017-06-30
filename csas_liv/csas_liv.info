@@ -1,0 +1,5 @@
+name = Csas liveinternet
+description = Csas liveinternet
+package = Csas
+version = VERSION
+core = 7.x

@@ -1,0 +1,37 @@
+<?php
+
+function csas_liv_block_info() {
+  $blocks['csas_liv'] = array(
+    'info' => t('Csas Liveinternet'),
+  );
+  return $blocks;
+}
+
+function csas_liv_block_view($delta = '') {
+  $block = array();
+  $scr = theme('csas_liv');
+//  $con['#attached']['js'][] = array(
+//    'data' => $scr,
+//    'type' => 'inline',
+//    'scope' => 'footer',
+//  );
+  switch ($delta) {
+    case 'csas_liv':
+      $block['content'] = $scr;
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function csas_liv_theme() {
+  return array(
+    'csas_liv' => array(
+      'variables' => array('opt' => NULL),
+      'file' => 'csas_liv.theme.inc',
+      'template' => 'csas-liv',
+    ),
+  );
+}
